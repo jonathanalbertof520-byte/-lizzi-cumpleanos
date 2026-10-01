@@ -1,1 +1,239 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="theme-color" content="#08080b">
+<title>Para Lizzi ❤️</title>
+<style>
+:root{--bg:#07070a;--fg:#f8f5f2;--muted:#b9b1b0;--accent:#ff5f82;--accent2:#ffd0da}
+*{box-sizing:border-box}html{scroll-behavior:smooth}
+body{margin:0;background:radial-gradient(circle at 50% 0,#24121a 0,#09080b 34%,#050507 100%);color:var(--fg);font-family:Georgia,"Times New Roman",serif;overflow-x:hidden}
+body:before{content:"";position:fixed;inset:0;pointer-events:none;opacity:.14;background-image:radial-gradient(#fff 1px,transparent 1px);background-size:55px 55px;animation:drift 24s linear infinite}
+@keyframes drift{to{background-position:55px 110px}}
+section{min-height:100svh;display:flex;align-items:center;justify-content:center;padding:70px 20px;position:relative}
+.hero{text-align:center}
+.kicker{letter-spacing:.28em;text-transform:uppercase;font:600 11px/1.4 system-ui,sans-serif;color:var(--accent2);margin-bottom:22px}
+h1{font-size:clamp(52px,14vw,120px);line-height:.9;margin:0 0 22px;font-weight:400}
+h1 span{color:var(--accent)}
+.subtitle{max-width:650px;margin:auto;color:var(--muted);font:400 16px/1.8 system-ui,sans-serif}
+.scroll{margin-top:48px;color:#fff8;font:11px system-ui,sans-serif;letter-spacing:.2em;text-transform:uppercase}
+.scroll:after{content:"↓";display:block;font-size:24px;margin-top:8px;color:var(--accent)}
+.wrap{max-width:1050px;width:100%;margin:auto}
+.story{text-align:center}
+.story h2,.gift h2{font-size:clamp(34px,7vw,62px);font-weight:400;margin:0 0 24px}
+.story p,.letter p{max-width:720px;margin:0 auto;color:#d2cbca;font:17px/2 system-ui,sans-serif}
+.divider{width:70px;height:1px;background:var(--accent);margin:30px auto}
+.gallery{display:grid;grid-template-columns:repeat(2,1fr);gap:14px;margin-top:42px}
+.card{overflow:hidden;border-radius:18px;background:#111;box-shadow:0 18px 55px #0008;transform:translateY(0);transition:.5s}
+.card:nth-child(3n){grid-row:span 2}
+.card img{width:100%;height:100%;min-height:260px;display:block;object-fit:cover;transition:transform .8s}
+.card:hover img{transform:scale(1.04)}
+.letter{background:linear-gradient(180deg,#0b080b,#120b10);text-align:center}
+.letterbox{max-width:760px;padding:42px 28px;border:1px solid #ffffff16;border-radius:28px;background:#ffffff05;box-shadow:0 30px 100px #0008}
+.letter p{font-family:Georgia,serif;font-size:19px;color:#e8e0df}
+.signature{margin-top:28px;color:var(--accent2);font-size:20px}
+.gift{text-align:center}
+.giftbox{max-width:720px}
+.reveal{margin-top:38px;padding:17px 30px;border:1px solid #ff7893aa;border-radius:999px;background:#ff54771a;color:white;font:600 14px system-ui,sans-serif;letter-spacing:.08em;cursor:pointer;transition:.3s}
+.reveal:hover{background:#ff547733;transform:translateY(-2px)}
+.video{display:none;margin-top:38px;animation:appear .8s ease}
+.video.show{display:block}
+@keyframes appear{from{opacity:0;transform:translateY(20px)}to{opacity:1;transform:none}}
+.video a{display:inline-block;padding:18px 34px;border-radius:999px;background:var(--accent);color:white;text-decoration:none;font:700 14px system-ui,sans-serif;box-shadow:0 15px 45px #ff527755}
+.note{margin-top:20px;color:#aaa;font:12px/1.6 system-ui,sans-serif}
+footer{padding:35px 20px;text-align:center;color:#777;font:12px system-ui,sans-serif}
+.heart{font-size:30px;color:var(--accent);animation:pulse 1.8s ease-in-out infinite}
+@keyframes pulse{50%{transform:scale(1.2)}}
+@media(max-width:650px){.gallery{grid-template-columns:1fr}.card:nth-child(3n){grid-row:auto}.card img{min-height:330px}}
 
+.countdown-section{text-align:center;padding:70px 20px 45px}
+.countdown-section h2{font-size:clamp(1.8rem,5vw,3rem);margin:8px 0 28px}
+.eyebrow{text-transform:uppercase;letter-spacing:3px;font-size:.75rem;opacity:.7}
+.countdown{display:grid;grid-template-columns:repeat(4,minmax(65px,110px));justify-content:center;gap:12px}
+.countdown>div{padding:18px 10px;border:1px solid rgba(255,105,180,.25);border-radius:18px;background:rgba(255,255,255,.04);backdrop-filter:blur(8px)}
+.countdown span{display:block;font-size:clamp(1.8rem,6vw,3rem);font-weight:800}
+.countdown small{font-size:.65rem;letter-spacing:1.5px;opacity:.65}
+.birthday-message{margin-top:24px;opacity:.8}
+@media(max-width:520px){.countdown{gap:7px}.countdown>div{padding:14px 6px;border-radius:14px}.countdown small{font-size:.55rem}}
+
+</style>
+
+<style>
+#passwordGate{position:fixed;inset:0;z-index:99999;background:radial-gradient(circle at 50% 20%,#351522 0,#09080b 45%,#050507 100%);display:flex;align-items:center;justify-content:center;padding:24px}
+#passwordGate .gate-card{width:min(420px,100%);text-align:center;padding:38px 26px;border:1px solid rgba(255,255,255,.12);border-radius:24px;background:rgba(12,10,14,.86);box-shadow:0 20px 80px rgba(0,0,0,.55);backdrop-filter:blur(12px)}
+#passwordGate .gate-heart{font-size:48px;color:#ff5f82;margin-bottom:10px}
+#passwordGate h2{font-size:30px;font-weight:400;margin:0 0 10px}
+#passwordGate p{color:#b9b1b0;font:15px/1.6 system-ui,sans-serif;margin:0 0 22px}
+#passwordGate input{width:100%;padding:15px 16px;border-radius:12px;border:1px solid rgba(255,255,255,.16);background:#111015;color:#fff;text-align:center;font-size:18px;outline:none}
+#passwordGate button{margin-top:12px;width:100%;padding:15px;border:0;border-radius:12px;background:#ff5f82;color:#fff;font-weight:700;letter-spacing:.08em;cursor:pointer}
+#passwordError{min-height:22px;margin-top:10px!important;color:#ff8fa8!important;font-size:13px!important}
+body.locked{overflow:hidden}
+.music-toggle{position:fixed;right:18px;bottom:18px;z-index:9998;width:48px;height:48px;border:1px solid rgba(255,255,255,.18);border-radius:50%;background:rgba(20,14,18,.82);color:#fff;font-size:20px;cursor:pointer;box-shadow:0 8px 30px rgba(0,0,0,.35);backdrop-filter:blur(10px)}
+</style>
+</head>
+<body class="locked">
+
+<div id="passwordGate">
+  <div class="gate-card">
+    <div class="gate-heart">♥</div>
+    <div class="kicker">Una sorpresa para usted</div>
+    <h2>Esta página es para Lizzi ❤️</h2>
+    <p>Ingresá la contraseña para abrir tu regalo.</p>
+    <input id="passwordInput" type="password" inputmode="numeric" autocomplete="off" placeholder="Contraseña">
+    <button onclick="checkPassword()">ABRIR MI REGALO</button>
+    <p id="passwordError"></p>
+  </div>
+</div>
+
+<audio id="bgMusic" loop preload="metadata">
+  <source src="Carry You.mp3" type="audio/mpeg">
+</audio>
+<button id="musicToggle" class="music-toggle" type="button" onclick="toggleMusic()" aria-label="Pausar música">🎵</button>
+
+<section class="hero">
+  <div>
+    <div class="kicker">Una pequeña sorpresa para usted</div>
+    <h1>Feliz cumpleaños,<br><span>Lizzi</span> ❤️</h1>
+    <p class="subtitle">Hay recuerdos que merecen guardarse para siempre. Esta página es uno de ellos.</p>
+    <div class="scroll">Deslizá para comenzar</div>
+  </div>
+</section>
+
+
+<section class="countdown-section">
+  <p class="eyebrow">Falta poquito… ❤️</p>
+  <h2>Cuenta regresiva para tu día</h2>
+  <div class="countdown" id="countdown">
+    <div><span id="days">0</span><small>DÍAS</small></div>
+    <div><span id="hours">0</span><small>HORAS</small></div>
+    <div><span id="minutes">0</span><small>MINUTOS</small></div>
+    <div><span id="seconds">0</span><small>SEGUNDOS</small></div>
+  </div>
+  <p id="birthday-message" class="birthday-message">El 7 de octubre es tu día. ✨</p>
+</section>
+
+<section class="story">
+  <div class="wrap">
+    <div class="kicker">Nuestra historia</div>
+    <h2>De todos los momentos...</h2>
+    <div class="divider"></div>
+    <p>Entre tantos días, conversaciones, risas y momentos juntos, hay recuerdos que se quedan de una forma especial. Quise reunir algunos de ellos en un solo lugar, para que cuando vuelvas aquí puedas recordar todo lo bonito que hemos vivido.</p>
+    <div class="gallery"><div class="card"><img src="fotos/foto-01.jpg" alt="Recuerdo 1" loading="lazy"></div>
+<div class="card"><img src="fotos/foto-02.jpg" alt="Recuerdo 2" loading="lazy"></div>
+<div class="card"><img src="fotos/foto-03.jpg" alt="Recuerdo 3" loading="lazy"></div>
+<div class="card"><img src="fotos/foto-04.jpg" alt="Recuerdo 4" loading="lazy"></div>
+<div class="card"><img src="fotos/foto-05.jpg" alt="Recuerdo 5" loading="lazy"></div>
+<div class="card"><img src="fotos/foto-06.jpg" alt="Recuerdo 6" loading="lazy"></div>
+<div class="card"><img src="fotos/foto-07.jpg" alt="Recuerdo 7" loading="lazy"></div>
+<div class="card"><img src="fotos/foto-08.jpg" alt="Recuerdo 8" loading="lazy"></div>
+<div class="card"><img src="fotos/foto-09.jpg" alt="Recuerdo 9" loading="lazy"></div>
+<div class="card"><img src="fotos/foto-10.jpg" alt="Recuerdo 10" loading="lazy"></div>
+<div class="card"><img src="fotos/foto-11.jpg" alt="Recuerdo 11" loading="lazy"></div>
+<div class="card"><img src="fotos/foto-12.jpg" alt="Recuerdo 12" loading="lazy"></div>
+<div class="card"><img src="fotos/foto-13.jpg" alt="Recuerdo 13" loading="lazy"></div>
+<div class="card"><img src="fotos/foto-14.jpg" alt="Recuerdo 14" loading="lazy"></div>
+<div class="card"><img src="fotos/foto-15.jpg" alt="Recuerdo 15" loading="lazy"></div>
+<div class="card"><img src="fotos/foto-16.jpg" alt="Recuerdo 16" loading="lazy"></div>
+<div class="card"><img src="fotos/foto-17.jpg" alt="Recuerdo 17" loading="lazy"></div>
+<div class="card"><img src="fotos/foto-18.jpg" alt="Recuerdo 18" loading="lazy"></div>
+<div class="card"><img src="fotos/foto-19.jpg" alt="Recuerdo 19" loading="lazy"></div>
+<div class="card"><img src="fotos/foto-20.jpg" alt="Recuerdo 20" loading="lazy"></div></div>
+  </div>
+</section>
+
+<section class="letter">
+  <div class="letterbox">
+    <div class="kicker">Para usted</div>
+    <h2>Una carta</h2>
+    <div class="divider"></div>
+    <p>Lizzi, hoy quiero desearte un cumpleaños increíble. Espero que este nuevo año de su vida venga lleno de momentos que le hagan sonreír, sueños cumplidos y personas que la quieran de verdad.</p>
+    <br>
+    <p>Gracias por cada recuerdo, por cada risa y por todos esos pequeños momentos que quizá parecen simples, pero que para mí significan muchísimo. No quería regalarle solamente algo que pudiera guardar; quería dejarle un recuerdo al que pudiera volver.</p>
+    <br>
+    <p>Que hoy la consientan muchísimo, que sonría todo lo que pueda y que nunca olvide lo especial que es.</p>
+    <div class="signature">Con cariño, Jonathan ❤️</div>
+  </div>
+</section>
+
+<section class="gift">
+  <div class="giftbox">
+    <div class="heart">♥</div>
+    <div class="kicker">Y todavía falta algo...</div>
+    <h2>Este no era el último regalo.</h2>
+    <p class="subtitle">Cuando estés lista, tocá el botón. Hay algo más que preparé para usted.</p>
+    <button class="reveal" onclick="reveal()">ABRIR MI ÚLTIMA SORPRESA</button>
+    <div class="video" id="video">
+      <div class="kicker">Para usted, Lizzi</div>
+      <p class="subtitle" style="margin-bottom:22px">Ahora sí... llegó el momento. ❤️<br><strong>Para usted, Lizzi.</strong></p>
+      <a id="videoLink" href="https://youtu.be/CSbqXJoqRsA?si=EnV0W__GxO7FbKiz" target="_blank" rel="noopener">▶ VER EL VIDEO</a>
+      <div class="note">El botón abre el video que preparaste para Lizzi.</div>
+    </div>
+  </div>
+</section>
+
+<footer>Hecho con cariño para Lizzi ❤️</footer>
+
+<script>
+
+function checkPassword(){
+  const input=document.getElementById("passwordInput");
+  const error=document.getElementById("passwordError");
+  if(input.value==="2000"){
+    document.getElementById("passwordGate").style.display="none";
+    document.body.classList.remove("locked");
+    const music=document.getElementById("bgMusic");
+    music.volume=0.28;
+    music.play().then(()=>{
+      document.getElementById("musicToggle").textContent="🔊";
+    }).catch(()=>{});
+  }else{
+    error.textContent="Contraseña incorrecta ❤️";
+    input.value="";
+    input.focus();
+  }
+}
+document.getElementById("passwordInput").addEventListener("keydown",function(e){
+  if(e.key==="Enter") checkPassword();
+});
+
+function toggleMusic(){
+  const music=document.getElementById("bgMusic");
+  const btn=document.getElementById("musicToggle");
+  if(music.paused){
+    music.play().then(()=>{btn.textContent="🔊";}).catch(()=>{});
+  }else{
+    music.pause();
+    btn.textContent="🎵";
+  }
+}
+
+function reveal(){
+  document.getElementById('video').classList.add('show');
+  document.getElementById('video').scrollIntoView({behavior:'smooth',block:'center'});
+}
+
+const birthdayTarget = new Date("2026-10-07T00:00:00-06:00").getTime();
+function updateCountdown(){
+  const now = Date.now();
+  const distance = birthdayTarget - now;
+  const message = document.getElementById("birthday-message");
+  if(distance <= 0){
+    document.getElementById("days").textContent = "0";
+    document.getElementById("hours").textContent = "0";
+    document.getElementById("minutes").textContent = "0";
+    document.getElementById("seconds").textContent = "0";
+    message.textContent = "¡Feliz cumpleaños, Lizzi! ❤️✨";
+    return;
+  }
+  document.getElementById("days").textContent = Math.floor(distance / 86400000);
+  document.getElementById("hours").textContent = Math.floor((distance % 86400000) / 3600000);
+  document.getElementById("minutes").textContent = Math.floor((distance % 3600000) / 60000);
+  document.getElementById("seconds").textContent = Math.floor((distance % 60000) / 1000);
+}
+updateCountdown();
+setInterval(updateCountdown, 1000);
+
+</script>
+</body>
+</html>
