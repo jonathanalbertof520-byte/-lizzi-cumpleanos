@@ -103,14 +103,14 @@ body.locked{overflow:hidden}
 
 <section class="countdown-section">
   <p class="eyebrow">Falta poquito… ❤️</p>
-  <h2>Cuenta regresiva para tu día</h2>
+  <h2>Cuenta regresiva para su día</h2>
   <div class="countdown" id="countdown">
     <div><span id="days">0</span><small>DÍAS</small></div>
     <div><span id="hours">0</span><small>HORAS</small></div>
     <div><span id="minutes">0</span><small>MINUTOS</small></div>
     <div><span id="seconds">0</span><small>SEGUNDOS</small></div>
   </div>
-  <p id="birthday-message" class="birthday-message">El 7 de octubre es tu día. ✨</p>
+  <p id="birthday-message" class="birthday-message">El 7 de octubre es su día. ✨</p>
 </section>
 
 <section class="story">
@@ -147,7 +147,7 @@ body.locked{overflow:hidden}
     <div class="kicker">Para usted</div>
     <h2>Una carta</h2>
     <div class="divider"></div>
-    <p>Lizzi, hoy quiero desearte un cumpleaños increíble. Espero que este nuevo año de su vida venga lleno de momentos que le hagan sonreír, sueños cumplidos y personas que la quieran de verdad.</p>
+    <p>Lizzi, hoy quiero desearle un cumpleaños increíble. Espero que este nuevo año de su vida venga lleno de momentos que le hagan sonreír, sueños cumplidos y personas que la quieran de verdad.</p>
     <br>
     <p>Gracias por cada recuerdo, por cada risa y por todos esos pequeños momentos que quizá parecen simples, pero que para mí significan muchísimo. No quería regalarle solamente algo que pudiera guardar; quería dejarle un recuerdo al que pudiera volver.</p>
     <br>
@@ -161,13 +161,12 @@ body.locked{overflow:hidden}
     <div class="heart">♥</div>
     <div class="kicker">Y todavía falta algo...</div>
     <h2>Este no era el último regalo.</h2>
-    <p class="subtitle">Cuando estés lista, tocá el botón. Hay algo más que preparé para usted.</p>
-    <button class="reveal" onclick="reveal()">ABRIR MI ÚLTIMA SORPRESA</button>
+    <p id="videoLockedMessage" class="subtitle">Su última sorpresa está esperando el momento indicado. ❤️<br><strong>Cuando el contador llegue a 0, se desbloqueará.</strong></p>
     <div class="video" id="video">
       <div class="kicker">Para usted, Lizzi</div>
-      <p class="subtitle" style="margin-bottom:22px">Ahora sí... llegó el momento. ❤️<br><strong>Para usted, Lizzi.</strong></p>
-      <a id="videoLink" href="https://youtu.be/CSbqXJoqRsA?si=EnV0W__GxO7FbKiz" target="_blank" rel="noopener">▶ VER EL VIDEO</a>
-      <div class="note">El botón abre el video que preparaste para Lizzi.</div>
+      <p class="subtitle" style="margin-bottom:22px">Ahora sí... llegó el momento. ❤️<br><strong>Su sorpresa está lista.</strong></p>
+      <a id="videoLink" href="https://youtu.be/CSbqXJoqRsA?si=EnV0W__GxO7FbKiz" target="_blank" rel="noopener">▶ VER SU VIDEO</a>
+      <div class="note">El botón abre el video que preparé para usted.</div>
     </div>
   </div>
 </section>
@@ -208,12 +207,16 @@ function toggleMusic(){
   }
 }
 
-function reveal(){
-  document.getElementById('video').classList.add('show');
-  document.getElementById('video').scrollIntoView({behavior:'smooth',block:'center'});
+const birthdayTarget = new Date("2026-10-07T00:00:00-06:00").getTime();
+let videoUnlocked = false;
+
+function unlockVideo(){
+  if(videoUnlocked) return;
+  videoUnlocked = true;
+  document.getElementById("video").classList.add("show");
+  document.getElementById("videoLockedMessage").innerHTML = "¡Llegó el momento! ❤️✨<br><strong>Su última sorpresa ya está desbloqueada.</strong>";
 }
 
-const birthdayTarget = new Date("2026-10-07T00:00:00-06:00").getTime();
 function updateCountdown(){
   const now = Date.now();
   const distance = birthdayTarget - now;
@@ -224,6 +227,7 @@ function updateCountdown(){
     document.getElementById("minutes").textContent = "0";
     document.getElementById("seconds").textContent = "0";
     message.textContent = "¡Feliz cumpleaños, Lizzi! ❤️✨";
+    unlockVideo();
     return;
   }
   document.getElementById("days").textContent = Math.floor(distance / 86400000);
